@@ -9,13 +9,35 @@
 </head>
 <body>
 	<div id="app">
-		<pokemon></pokemon>
-		<ivnumber></ivnumber>
-		<results></results>
-		<levels></levels>
+		<div class="container">
+			<div class="controls">
+				<select v-model="pkm">
+					<option>Select Pokemon</option>
+					<option v-for="(option, index) in pokemons" v-bind:value="index">{{ option.name }}</option>
+				</select>
+
+				<div class="bonus">
+					<input type="number" min="0" max="15" v-model="atk" />
+					<input type="number" min="0" max="15" v-model="def" />
+					<input type="number" min="0" max="15" v-model="stm" />
+				</div>
+			</div>
+
+			<div class="results">
+				<p>CP</p>
+				<h2 v-text="result_cp"></h2>
+				<p>HP <span v-text="result_hp"></span></p>
+			</div>
+
+			<div class="levels">
+				<input type="number" min="1" max="40" v-model="level" />
+				<p>Pokemon Level</p>			
+			</div>
+		</div>		
 	</div>
 
 	<script src="https://unpkg.com/vue"></script>
+	<script src="https://unpkg.com/vue-resource"></script>
 	<script src="scripts.js"></script>
 </body>
 </html>
