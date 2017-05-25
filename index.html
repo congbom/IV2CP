@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	
 	<title>IV2CP - Individual Values to Combat Power</title>
@@ -11,15 +12,24 @@
 	<div id="app">
 		<div class="container">
 			<div class="controls">
-				<select v-model="pkm">
+				<select class="selecter" v-model="pkm">
 					<option>Select Pokemon</option>
 					<option v-for="(option, index) in pokemons" v-bind:value="index">{{ option.name }}</option>
 				</select>
 
 				<div class="bonus">
-					<input type="number" min="0" max="15" v-model="atk" />
-					<input type="number" min="0" max="15" v-model="def" />
-					<input type="number" min="0" max="15" v-model="stm" />
+					<div class="col">
+						<label>Bonus Attack</label>
+						<input type="number" min="0" max="15" v-model="atk" />						
+					</div>
+					<div class="col">
+						<label>Defense Attack</label>
+						<input type="number" min="0" max="15" v-model="def" />
+					</div>
+					<div class="col">
+						<label>Stamina Attack</label>
+						<input type="number" min="0" max="15" v-model="stm" />
+					</div>
 				</div>
 			</div>
 

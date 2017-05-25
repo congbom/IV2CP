@@ -26,15 +26,22 @@ new Vue({
 	},
 	computed: {
 		result_cp: function() {
-			return this.atk * this.def * this.stm * this.level;
+			// if ( this.pokemons && this.pkm ) {
+			// 	var index = this.pkm;
+			// 	var data_all = this.pokemons;
+			// 	var data_this = data_all[index];
+			// }
+			
+			return this.atk * this.level;
 		},
 		result_hp: function() {
+			// if ( this.pokemons && this.pkm ) {
+			// 	var index = this.pkm;
+			// 	var data_all = this.pokemons;
+			// 	var data_this = data_all[index];
+			// }
+			
 			return this.stm * this.level;
-		}
-	},
-	watch: {
-		pkm: function( val ) {
-			alert( val );
 		}
 	}
 });
