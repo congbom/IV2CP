@@ -2,11 +2,11 @@ new Vue({
 	el: '#app',
 	data: {
 		pokemons: null,
-		scalar: null,
-		pkm: 001,
-		atk: 15,
-		def: 15,
-		stm: 15,
+		currnet_pkm: "004",
+		scalars: null,
+		bonus_atk: 15,
+		bonus_def: 15,
+		bonus_sta: 15,
 		level: 20,
 	},
 	created: function() {
@@ -19,29 +19,61 @@ new Vue({
 
 		/* Scalar */
 		this.$http.get('scalar.json').then(response => {
-	    	this.scalar = response.body;
+	    	this.scalars = response.body;
 	  	}, response => {
 	    	alert('Scalar Error!');
 	  	});
 	},
 	computed: {
+		stats: function() {
+			if ( this.pokemons && this.currnet_pkm ) {
+				var currnet_pkm = this.currnet_pkm;
+				var pokemons = this.pokemons;
+
+				return pokemons[currnet_pkm];				
+			}
+		},
+		base_atk: function() {
+			if ( this.stats ) {
+				var stats = this.stats;
+				return Number( stats.atk );
+			}
+		},
+		base_def: function() {
+			if ( this.stats ) {
+				var stats = this.stats;
+				return Number( stats.def );
+			}
+		},
+		base_sta: function() {
+			if ( this.stats ) {
+				var stats = this.stats;
+				return Number( stats.sta );
+			}
+		},
+		cp_scalar: function() {
+			if ( this.level && this.scalars ) {
+				var level = this.level;
+				var scalars = this.scalars;
+
+				return Number( scalars[level] );				
+			}
+		},
 		result_cp: function() {
-			// if ( this.pokemons && this.pkm ) {
-			// 	var index = this.pkm;
-			// 	var data_all = this.pokemons;
-			// 	var data_this = data_all[index];
-			// }
-			
-			return this.atk * this.level;
+			if ( this.cp_scalar ) {
+				var atk = this.base_atk + Number(this.bonus_atk);
+				var def = Math.sqrt( this.base_def + Number(this.bonus_def) );
+				var sta = Math.sqrt( this.base_sta + Number(this.bonus_sta) );
+				var oth = Math.pow( this.cp_scalar, 2) * 0.1;
+
+				console.log( atk, def, sta, oth );
+				return Math.round( atk * def * sta * oth );
+			}
 		},
 		result_hp: function() {
-			// if ( this.pokemons && this.pkm ) {
-			// 	var index = this.pkm;
-			// 	var data_all = this.pokemons;
-			// 	var data_this = data_all[index];
-			// }
-			
-			return this.stm * this.level;
+			if ( this.cp_scalar ) {
+				return Math.round( ( this.base_sta + Number(this.bonus_sta) ) * this.cp_scalar );
+			}
 		}
 	}
 });
