@@ -67,7 +67,7 @@ new Vue({
 				var oth = Math.pow( this.cp_scalar, 2) * 0.1;
 
 				console.log( atk, def, sta, oth );
-				return Math.round( atk * def * sta * oth );
+				return Math.floor( atk * def * sta * oth );
 			}
 		},
 		result_hp: function() {

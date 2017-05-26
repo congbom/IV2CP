@@ -24,11 +24,12 @@ body {
 	padding-right: 30px;
 }
 .header {
-	border-bottom: 1px solid #CCC;
 	text-align: center;
 	padding-top: 5px;
 	padding-bottom: 7.5px;
 	margin-bottom: 60px;
+	background-color: #333;
+	color: #FFF;
 }
 .header h1 {
 	letter-spacing: 5px;
@@ -116,7 +117,8 @@ body {
 }
 
 .footer {
-	border-top: 1px solid #CCC;
+	background-color: #333;
+	color: #FFF;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	text-align: center;
