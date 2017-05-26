@@ -2,7 +2,7 @@ new Vue({
 	el: '#app',
 	data: {
 		pokemons: null,
-		currnet_pkm: "004",
+		currnet_pkm: "242",
 		scalars: null,
 		bonus_atk: 15,
 		bonus_def: 15,
@@ -72,7 +72,7 @@ new Vue({
 		},
 		result_hp: function() {
 			if ( this.cp_scalar ) {
-				return Math.round( ( this.base_sta + Number(this.bonus_sta) ) * this.cp_scalar );
+				return Math.floor( ( this.base_sta + Number(this.bonus_sta) ) * this.cp_scalar );
 			}
 		}
 	}

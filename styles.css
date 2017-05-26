@@ -8,19 +8,46 @@ body {
 	font-family: Roboto, sans-serif;
 	font-size: 14px;
 	color: #333;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.section {
+	flex: 1;
 }
 
 .container {
 	max-width: 800px;
 	margin: 0 auto;
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
-
+.header {
+	border-bottom: 1px solid #CCC;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 7.5px;
+	margin-bottom: 60px;
+}
+.header h1 {
+	letter-spacing: 5px;
+}
+.header p {
+	opacity: 0.5;
+}
 .controls {
 	max-width: 500px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.controls label {
+	font-size: 11px;
+	display: block;
+	margin-bottom: 5px;
+	text-align: center;
+	opacity: 0.75;
 }
 
 .selecter {
@@ -34,7 +61,6 @@ body {
 .selecter option {
 	padding: 0 15px;
 }
-
 .bonus {
 	margin-left: -15px;
 	margin-right: -15px;
@@ -55,6 +81,7 @@ body {
 	border-radius: 3px;
 	border: 1px solid #CCC; 
 	background-color: #EEE;
+	text-align: center;
 }
 
 .results {
@@ -82,10 +109,19 @@ body {
 	margin-top: 80px;
 }
 .levels input {
-	display: inline-block;
-	padding: 10px 10px;
-	border-radius: 3px;
-	border: 1px solid #CCC; 
-	background-color: #EEE;
+	display: block;
+	margin-top: 10px;
 	margin-bottom: 10px;
+	width: 100%;
+}
+
+.footer {
+	border-top: 1px solid #CCC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	margin-top: 60px;
+}
+.footer p {
+	opacity: 0.5;
 }
