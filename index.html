@@ -26,17 +26,21 @@
 				</select>
 
 				<div class="bonus">
-					<div class="col">
-						<label>Bonus Attack</label>
-						<input type="number" min="0" max="15" v-model="bonus_atk" />						
-					</div>
-					<div class="col">
-						<label>Defense Attack</label>
-						<input type="number" min="0" max="15" v-model="bonus_def" />
-					</div>
-					<div class="col">
-						<label>Stamina Attack</label>
-						<input type="number" min="0" max="15" v-model="bonus_sta" />
+					<p>Individual Values (IV): <span v-text="iv_percent"></span>%</p>
+					
+					<div class="row">
+						<div class="col">
+							<input type="number" min="0" max="15" v-model="bonus_atk" />						
+							<label>Bonus Attack</label>
+						</div>
+						<div class="col">
+							<input type="number" min="0" max="15" v-model="bonus_def" />
+							<label>Defense Attack</label>
+						</div>
+						<div class="col">
+							<input type="number" min="0" max="15" v-model="bonus_sta" />
+							<label>Stamina Attack</label>
+						</div>						
 					</div>
 				</div>
 			</div>

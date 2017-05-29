@@ -51,6 +51,10 @@ new Vue({
 				return Number( stats.sta );
 			}
 		},
+		iv_percent: function() {
+			var percent = ( Number(this.bonus_atk) + Number(this.bonus_def) + Number(this.bonus_sta) ) * 100 / 45;
+			return Math.round( percent * 100 ) / 100;
+		},
 		cp_scalar: function() {
 			if ( this.level && this.scalars ) {
 				var level = this.level;
@@ -66,7 +70,6 @@ new Vue({
 				var sta = Math.sqrt( this.base_sta + Number(this.bonus_sta) );
 				var oth = Math.pow( this.cp_scalar, 2) * 0.1;
 
-				console.log( atk, def, sta, oth );
 				return Math.floor( atk * def * sta * oth );
 			}
 		},
