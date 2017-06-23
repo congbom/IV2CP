@@ -22,7 +22,7 @@
 			<div class="controls">
 				<label>Select Pokemon</label>
 				<select class="selecter" v-model="currnet_pkm">
-					<option v-for="(option, index) in pokemons" v-bind:value="index">{{ option.name }}</option>
+					<option v-for="(option, index) in pokemons" v-bind:value="index">#{{ index + 1 }} - {{ option.name }}</option>
 				</select>
 
 				<div class="bonus">
@@ -54,8 +54,9 @@
 			<div class="levels">
 				<label>Pokemon Level: <span v-text="level"></span></label>
 				<input type="range" min="1" step="0.5" max="39" v-model="level" />
+				<p class="required">Require <strong v-text="dust">2500</strong> Dust, <strong v-text="candy">2</strong> Candy to Power Up</p>
 			</div>
-		</div>		
+		</div>
 	</section>
 
 	<footer class="footer">

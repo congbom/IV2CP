@@ -123,6 +123,11 @@ body {
 	width: 100%;
 }
 
+.required {
+	font-size: 11px;
+	opacity: 0.75;
+}
+
 .footer {
 	background-color: #333;
 	color: #FFF;
