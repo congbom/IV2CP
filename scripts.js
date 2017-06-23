@@ -2,7 +2,7 @@ new Vue({
 	el: '#app',
 	data: {
 		pokemons: null,
-		currnet_pkm: 3,
+		currnet_pkm: 0,
 		scalars: null,
 		candies: null,
 		dusts: null,
@@ -42,11 +42,11 @@ new Vue({
 	},
 	computed: {
 		stats: function() {
-			if ( this.pokemons && this.currnet_pkm ) {
+			if ( this.pokemons ) {
 				var currnet_pkm = this.currnet_pkm;
 				var pokemons = this.pokemons;
 
-				return pokemons[currnet_pkm];				
+				return pokemons[ currnet_pkm ];			
 			}
 
 			return 0;
