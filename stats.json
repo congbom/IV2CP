@@ -147,7 +147,7 @@
 	{ "name": "Dratini",	"sta": 82,	"atk": 119,	"def": 94 },
 	{ "name": "Dragonair",	"sta": 122,	"atk": 163,	"def": 138 },
 	{ "name": "Dragonite",	"sta": 182,	"atk": 263,	"def": 201 },
-	{ "name": "Mewtwo",		"sta": 212,	"atk": 330,	"def": 200 },
+	{ "name": "Mewtwo",		"sta": 193,	"atk": 300,	"def": 182 },
 	{ "name": "Mew",		"sta": 200,	"atk": 210,	"def": 210 },
 	{ "name": "Chikorita",	"sta": 90,	"atk": 92,	"def": 122 },
 	{ "name": "Bayleef",	"sta": 120,	"atk": 122,	"def": 155 },
