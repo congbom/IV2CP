@@ -247,6 +247,6 @@
 	{ "name": "Pupitar",	"atk": 155,	"def": 133, "sta": 140 },
 	{ "name": "Tyranitar",	"atk": 251,	"def": 212, "sta": 200 },
 	{ "name": "Lugia",		"atk": 193,	"def": 323, "sta": 212 },
-	{ "name": "Ho-Oh",		"atk": 263,	"def": 301, "sta": 212 },
+	{ "name": "Ho-Oh",		"atk": 239,	"def": 274, "sta": 193 },
 	{ "name": "Celebi",		"atk": 210,	"def": 210, "sta": 200 }
 ]
