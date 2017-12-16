@@ -1,8 +1,10 @@
+Vue.component('v-select', VueSelect.VueSelect);
+
 new Vue({
 	el: '#app',
 	data: {
 		pokemons: null,
-		currnet_pkm: 0,
+		selected: null,
 		scalars: null,
 		candies: null,
 		dusts: null,
@@ -15,6 +17,7 @@ new Vue({
 		/* Stats */
 		this.$http.get('stats.json').then(response => {
 	    	this.pokemons = response.body;
+	    	this.selected = this.pokemons[0];
 	  	}, response => {
 	    	alert('Stats Error!');
 	  	});
@@ -41,35 +44,25 @@ new Vue({
 	  	});
 	},
 	computed: {
-		stats: function() {
-			if ( this.pokemons ) {
-				var currnet_pkm = this.currnet_pkm;
-				var pokemons = this.pokemons;
-
-				return pokemons[ currnet_pkm ];			
-			}
-
-			return 0;
-		},
 		base_atk: function() {
-			if ( this.stats ) {
-				var stats = this.stats;
+			if ( this.selected ) {
+				var stats = this.selected;
 				return Number( stats.atk );
 			}
 
 			return 0;
 		},
 		base_def: function() {
-			if ( this.stats ) {
-				var stats = this.stats;
+			if ( this.selected ) {
+				var stats = this.selected;
 				return Number( stats.def );
 			}
 
 			return 0;
 		},
 		base_sta: function() {
-			if ( this.stats ) {
-				var stats = this.stats;
+			if ( this.selected ) {
+				var stats = this.selected;
 				return Number( stats.sta );
 			}
 
