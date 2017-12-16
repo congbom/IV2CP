@@ -82,14 +82,28 @@ body {
 	padding-left: 15px;
 	padding-right: 15px;
 }
-.bonus input {
+.bonus .nav {
 	display: block;
 	width: 100%;
-	padding: 10px 10px;
 	border-radius: 3px;
-	border: 1px solid #CCC; 
-	background-color: #EEE;
+	border: 1px solid #DDD; 
+	background-color: #EFEFEF;
 	text-align: center;
+	overflow: hidden;
+	line-height: 44px;
+}
+.bonus .nav button {
+	width: 22px;
+	height: 44px;
+	display: block;
+	border: none; 
+	cursor: pointer;
+}
+.bonus .nav .left {
+	float: left;
+}
+.bonus .nav .right {
+	float: right;
 }
 
 .results {
@@ -116,11 +130,35 @@ body {
 	text-align: center;
 	margin-top: 80px;
 }
-.levels input {
-	display: block;
+.levels .nav {
 	margin-top: 10px;
 	margin-bottom: 10px;
+	overflow: hidden;
+	padding-left: 36px;
+	padding-right: 36px;
+	position: relative;
+	height: 32px;
+}
+.levels .nav .left {
+	left: 0;
+}
+.levels .nav .right {
+	right: 0;
+}
+.levels button {
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	top: 0;
+	border-radius: 50%;
+	background-color: #EFEFEF;
+	border: 1px solid #DDD;
+	cursor: pointer;
+}
+.levels input {
+	display: block;
 	width: 100%;
+	height: 32px;
 }
 
 .required {

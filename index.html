@@ -27,15 +27,27 @@
 					
 					<div class="row">
 						<div class="col">
-							<input type="number" min="0" max="15" v-model="bonus_atk" />						
+							<div class="nav">
+								<button v-on:click="bonus_change( 'bonus_atk', -1 )" class="left">-</button>
+								<span v-text="bonus_atk"></span>
+								<button v-on:click="bonus_change( 'bonus_atk', +1 )" class="right">+</button>
+							</div>						
 							<label>Bonus Attack</label>
 						</div>
 						<div class="col">
-							<input type="number" min="0" max="15" v-model="bonus_def" />
+							<div class="nav">
+								<button v-on:click="bonus_change( 'bonus_def', -1 )" class="left">-</button>
+								<span v-text="bonus_def"></span>
+								<button v-on:click="bonus_change( 'bonus_def', +1 )" class="right">+</button>
+							</div>
 							<label>Defense Attack</label>
 						</div>
 						<div class="col">
-							<input type="number" min="0" max="15" v-model="bonus_sta" />
+							<div class="nav">
+								<button v-on:click="bonus_change( 'bonus_sta', -1 )" class="left">-</button>
+								<span v-text="bonus_sta"></span>
+								<button v-on:click="bonus_change( 'bonus_sta', +1 )" class="right">+</button>
+							</div>
 							<label>Stamina Attack</label>
 						</div>						
 					</div>
@@ -50,7 +62,11 @@
 
 			<div class="levels">
 				<label>Pokemon Level: <span v-text="level"></span></label>
-				<input type="range" min="1" step="0.5" max="39" v-model="level" />
+				<div class="nav">
+					<button v-on:click="level_change( -0.5 )" class="left">-</button>
+					<input type="range" min="1" step="0.5" max="40" v-model="level" />
+					<button v-on:click="level_change( +0.5 )" class="right">+</button>
+				</div>
 				<p class="required">Require <strong v-text="dust">2500</strong> Dust, <strong v-text="candy">2</strong> Candy to Power Up</p>
 			</div>
 		</div>

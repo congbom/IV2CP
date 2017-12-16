@@ -3,8 +3,8 @@ Vue.component('v-select', VueSelect.VueSelect);
 new Vue({
 	el: '#app',
 	data: {
-		pokemons: null,
-		selected: null,
+		pokemons: [],
+		selected: {},
 		scalars: null,
 		candies: null,
 		dusts: null,
@@ -77,7 +77,7 @@ new Vue({
 				var level = this.level;
 				var scalars = this.scalars;
 
-				if ( level > 39 || level < 1 ) return 0;
+				if ( level > 40 || level < 1 ) return 0;
 		        if ( level % 1 ) return Math.pow( ( Math.pow( scalars[ level-0.5 ], 2) + Math.pow( scalars[ level-1.5 ], 2) ) / 2, 0.5);
 		        return scalars[ level-1];
 			}
@@ -108,7 +108,7 @@ new Vue({
 				var level = this.level;
 				var dusts = this.dusts;
 
-				if ( level > 39 || level < 1 ) return 0;
+				if ( level > 40 || level < 1 ) return 0;
 				if ( level % 1 ) return dusts[ level - 1.5 ];
 				return dusts[ level - 1 ];
 			}
@@ -120,12 +120,28 @@ new Vue({
 				var level = this.level;
 				var candies = this.candies;
 
-				if ( level > 39 || level < 1 ) return 0;
+				if ( level > 40 || level < 1 ) return 0;
 				if ( level % 1 ) return candies[ level - 1.5 ];
 				return candies[ level - 1 ];
 			}
 
 			return 0;
+		}
+	},
+	methods: {
+		bonus_change: function( type, value ) {
+			new_bonus = this[type] + value;
+
+			if( new_bonus >= 0 && new_bonus <= 15 ) {
+				this[type] = new_bonus;
+			}
+		},
+		level_change: function( value ) {
+			new_level = Number( this.level ) + value;
+
+			if( new_level >= 1 && new_level <= 40 ) {
+				this.level = new_level;
+			}
 		}
 	}
 });
