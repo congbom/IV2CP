@@ -379,7 +379,7 @@
 	{ "name": "Registeel",	"atk": 143, "def": 285, "sta": 160 },
 	{ "name": "Latias",		"atk": 228, "def": 268, "sta": 160 },
 	{ "name": "Latios",		"atk": 268, "def": 228, "sta": 160 },
-	{ "name": "Kyogre",		"atk": 297, "def": 276, "sta": 200 },
+	{ "name": "Kyogre",		"atk": 270, "def": 251, "sta": 182 },
 	{ "name": "Groudon",	"atk": 270, "def": 251, "sta": 182 },
 	{ "name": "Rayquaza",	"atk": 312, "def": 187, "sta": 210 },
 	{ "name": "Jirachi",	"atk": 210, "def": 210, "sta": 200 },

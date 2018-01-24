@@ -17,7 +17,7 @@ new Vue({
 		/* Stats */
 		this.$http.get('stats.json').then(response => {
 	    	this.pokemons = response.body;
-	    	this.selected = this.pokemons[382];
+	    	this.selected = this.pokemons[381];
 	  	}, response => {
 	    	alert('Stats Error!');
 	  	});
