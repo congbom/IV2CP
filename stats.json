@@ -381,7 +381,7 @@
 	{ "name": "Latios",		"atk": 268, "def": 228, "sta": 160 },
 	{ "name": "Kyogre",		"atk": 270, "def": 251, "sta": 182 },
 	{ "name": "Groudon",	"atk": 270, "def": 251, "sta": 182 },
-	{ "name": "Rayquaza",	"atk": 312, "def": 187, "sta": 210 },
+	{ "name": "Rayquaza",	"atk": 284, "def": 170, "sta": 191 },
 	{ "name": "Jirachi",	"atk": 210, "def": 210, "sta": 200 },
 	{ "name": "Deoxys",		"atk": 1, 	"def": 1, "sta": 1 },
 	{ "name": "Deoxys Attack",	"atk": 180, "def": 20, "sta": 100 },
